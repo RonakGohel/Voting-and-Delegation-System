@@ -7,17 +7,17 @@ pragma solidity ^0.8.33;
 contract ProposalSystem {
     uint256 private sIndexNumber;
 
-    mapping (uint256 => string) public sIndexNumberToProposal;
-    mapping (string => uint256) public sProposalToIndexNumber;
+    mapping(uint256 => string) public sIndexNumberToProposal;
+    mapping(string => uint256) public sProposalToIndexNumber;
 
     string[] private sProposals;
     uint256[] private sIndexNo;
 
-    constructor () {
+    constructor() {
         sIndexNumber = 1;
     }
 
-    function makeProposal (string memory proposal) external {
+    function makeProposal(string memory proposal) external {
         sProposalToIndexNumber[proposal] = sIndexNumber;
         sIndexNumberToProposal[sIndexNumber] = proposal;
 
@@ -27,7 +27,7 @@ contract ProposalSystem {
         sIndexNumber++;
     }
 
-    function getAllProposals () external view returns (uint256[] memory, string[] memory){
+    function getAllProposals() external view returns (uint256[] memory, string[] memory) {
         return (sIndexNo, sProposals);
     }
 }
