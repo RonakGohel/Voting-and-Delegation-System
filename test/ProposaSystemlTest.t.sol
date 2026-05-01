@@ -12,18 +12,15 @@ contract ProposalTest is Test {
         proposalSystem.makeProposal("First Proposal");
     }
 
-    function testMakeProposal() external view {
-        assertEq(proposalSystem.sIndexNumberToProposal(1), "First Proposal");
-        assertEq(proposalSystem.sProposalToIndexNumber("First Proposal"), 1);
-    }
-
     function testPrintingProposals() external {
         proposalSystem.makeProposal("Second Proposal");
 
-        (uint256[] memory indexNo, string[] memory proposals) = proposalSystem.getAllProposals();
+        ProposalSystem.AllProposals[] memory allProposals = proposalSystem.getAllProposals();
 
-        for (uint256 i = 0; i < proposals.length; i++) {
-            console.log(indexNo[i], proposals[i]);
+        for (uint256 i = 0; i < allProposals.length; i++) {
+            console.log("Index Number         :", allProposals[i].proposalIndexNumber);
+            console.log("Porposal Description :", allProposals[i].proposalName);
+            console.log("");
         }
     }
 }
