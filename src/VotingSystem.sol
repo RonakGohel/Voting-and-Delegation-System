@@ -6,6 +6,4 @@ pragma solidity ^0.8.33;
 /// @title Voting System
 /// @author Ronak Gohel
 /// @notice users can vote for proposals
-contract VotingSystem{
-
-}
+contract VotingSystem {}

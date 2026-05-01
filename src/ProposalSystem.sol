@@ -7,7 +7,7 @@ pragma solidity ^0.8.33;
 contract ProposalSystem {
     uint256 private sIndexNumber;
 
-    struct AllProposals{
+    struct AllProposals {
         string proposalName;
         uint256 proposalIndexNumber;
     }
@@ -22,7 +22,7 @@ contract ProposalSystem {
     /// User can call this function and submit their proposal
     /// @param proposal Submit Proposal
     function makeProposal(string memory proposal) external {
-        allProposals.push(AllProposals({ proposalName: proposal, proposalIndexNumber: sIndexNumber }));
+        allProposals.push(AllProposals({proposalName: proposal, proposalIndexNumber: sIndexNumber}));
 
         sIndexNumber++;
     }

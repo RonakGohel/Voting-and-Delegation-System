@@ -4,7 +4,7 @@ pragma solidity ^0.8.33;
 contract ProposalSystem {
     struct AllProposals {
         string proposalName;
-        uint proposalIndexNumber;
+        uint256 proposalIndexNumber;
     }
 
     AllProposals[] public proposals;
